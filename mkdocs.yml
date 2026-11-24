@@ -1,0 +1,45 @@
+site_name: Tuza Docs
+site_description: Set up your overlay, your sounds and your payouts.
+site_url: https://docs.tuza.stream/
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: black
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark
+    - scheme: slate
+      primary: black
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+nav:
+  - Start here: index.md
+  - Your overlay: overlay.md
+  - Sounds and alerts: sounds.md
+  - Money: money.md
+  - Song requests: songs.md
+  - API reference:
+      - api/index.md
+      - Alerts over WebSocket: api/websocket.md
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Allan-Ngugi-Nganga
