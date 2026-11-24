@@ -3,35 +3,40 @@ site_description: Set up your overlay, your sounds and your payouts.
 site_url: https://docs.tuza.stream/
 theme:
   name: material
+  language: en
+  font:
+    text: Inter
+    code: JetBrains Mono
   palette:
-    - scheme: default
-      primary: black
-      accent: deep purple
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark
-    - scheme: slate
-      primary: black
-      accent: deep purple
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light
+    scheme: default
+    primary: custom
+    accent: custom
   features:
     - navigation.sections
+    - navigation.indexes
     - navigation.top
+    - navigation.footer
     - content.code.copy
     - search.suggest
-extra_css:
-  - stylesheets/extra.css
+    - search.highlight
+  icon:
+    logo: material/broadcast
+    repo: fontawesome/brands/github
 markdown_extensions:
   - admonition
   - attr_list
+  - md_in_html
   - tables
   - toc:
       permalink: true
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+extra_css:
+  - stylesheets/extra.css
 nav:
   - Start here: index.md
   - Your overlay: overlay.md

@@ -1,14 +1,120 @@
-/* Headings were rendering at 54% black, which reads as grey next to body text.
-   Body copy is 87%, so the hierarchy was inverted for anyone skimming. */
-.md-typeset h1,
-.md-typeset h2,
-.md-typeset h3 {
-  color: #111418;
+/* Tuza docs: a light page that reads like paper, with one green accent.
+   Material's slate scheme is removed in mkdocs.yml, so this file only has to
+   describe one theme. */
+
+:root {
+  --tuza-green: #0b6b4f;
+  --tuza-green-light: #e6f2ee;
+  --tuza-ink: #111418;
+  --tuza-muted: #5b6570;
+  --tuza-rule: #e4e8ec;
+
+  --md-primary-fg-color: #ffffff;
+  --md-primary-bg-color: var(--tuza-ink);
+  --md-accent-fg-color: var(--tuza-green);
+  --md-typeset-a-color: var(--tuza-green);
 }
-.md-typeset h1 {
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #ffffff;
+  --md-default-fg-color: var(--tuza-ink);
+  --md-default-fg-color--light: var(--tuza-muted);
+  --md-code-bg-color: #f6f7f8;
+}
+
+/* Header: white, thin rule, no shadow. */
+.md-header {
+  background-color: #ffffff;
+  color: var(--tuza-ink);
+  box-shadow: none;
+  border-bottom: 1px solid var(--tuza-rule);
+}
+.md-header__title {
   font-weight: 700;
   letter-spacing: -0.01em;
 }
+.md-tabs {
+  background-color: #ffffff;
+  color: var(--tuza-ink);
+  border-bottom: 1px solid var(--tuza-rule);
+}
+
+/* Headings were rendering at 54% black while body copy sat at 87%. */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  color: var(--tuza-ink);
+}
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.md-typeset h2 {
+  margin-top: 2.2em;
+  padding-top: 0.6em;
+  border-top: 1px solid var(--tuza-rule);
+}
 .md-typeset .headerlink {
-  color: #9ca3af;
+  color: #b6bec6;
+}
+
+/* Body copy: slightly larger, because a creator reads this on a phone. */
+.md-typeset {
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+/* The three doors on the front page. */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid > .card {
+  border: 1px solid var(--tuza-rule);
+  border-radius: 14px;
+  box-shadow: none;
+  transition: border-color 120ms ease, transform 120ms ease;
+}
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid > .card:hover {
+  border-color: var(--tuza-green);
+  transform: translateY(-1px);
+}
+.md-typeset .grid.cards > ul > li > hr {
+  margin: 0.6em 0;
+  border-color: var(--tuza-rule);
+}
+
+/* Links underline on hover, which reads better than colour alone. */
+.md-typeset a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Tables: rules only, no zebra, so a fee table looks like a statement. */
+.md-typeset table:not([class]) th {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--tuza-ink);
+  color: var(--tuza-ink);
+}
+.md-typeset table:not([class]) td {
+  border-top: 1px solid var(--tuza-rule);
+}
+
+/* Sidebar: quiet until hovered. */
+.md-nav__link--active,
+.md-nav__link:active {
+  color: var(--tuza-green);
+  font-weight: 600;
+}
+
+/* Admonitions pick up the accent instead of Material's blue. */
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 1px;
+  border-left-width: 3px;
+  border-color: var(--tuza-rule);
+  border-left-color: var(--tuza-green);
+  box-shadow: none;
+}
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background-color: var(--tuza-green-light);
 }
