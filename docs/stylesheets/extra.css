@@ -1,0 +1,14 @@
+/* Headings were rendering at 54% black, which reads as grey next to body text.
+   Body copy is 87%, so the hierarchy was inverted for anyone skimming. */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  color: #111418;
+}
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.md-typeset .headerlink {
+  color: #9ca3af;
+}
